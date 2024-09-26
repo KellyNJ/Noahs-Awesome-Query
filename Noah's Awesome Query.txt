@@ -1,0 +1,7 @@
+/* Query 3: List the titles of all courses ever taught by a Music professor */
+SELECT course.title
+FROM teaches
+JOIN instructor ON teaches.ID = instructor.ID
+JOIN course ON teaches.course_id = course.course_id
+JOIN department ON instructor.dept_name = department.dept_name
+WHERE department.dept_name = 'Music';
